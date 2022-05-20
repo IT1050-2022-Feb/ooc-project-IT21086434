@@ -1,0 +1,158 @@
+//ExamAdministrator.h
+
+#define size 10
+#include"staff.h"
+#include"Examination.h"
+class ExamAdministrator:public Staff
+{
+
+private:
+ Examination* exam[size];
+
+public:
+	ExamAdministrator();
+	ExamAdministrator(const char pID[], const char prole[], const char pname[], const char pemail[], const char pNic[], const char ppassword[]);
+	void addExam();
+	void viewExam();
+	void removeExam();
+	void updateExam();
+	~ExamAdministrator();
+
+};
+
+//ExamAdministrator cpp
+
+#include "ExamAdministrator.h"
+#include<cstring>
+ExamAdministrator::ExamAdministrator()
+{
+	strcpy_s(ID, "");
+	strcpy_s(role, "");
+	strcpy_s(name, "");
+	strcpy_s(email, "");
+	strcpy_s(Nic, "");
+	strcpy_s(password, "");
+
+}
+
+ExamAdministrator::ExamAdministrator(const char pID[], const char prole[], const char pname[], const char pemail[], const char pNic[], const char ppassword[])
+{
+
+	strcpy_s(ID, pID);
+	strcpy_s(role, prole);
+	strcpy_s(name, pname);
+	strcpy_s(email, pemail);
+	strcpy_s(Nic, pNic);
+	strcpy_s(password, ppassword);
+
+}
+
+void ExamAdministrator::addExam()
+{
+
+}
+
+void ExamAdministrator::viewExam()
+{
+
+}
+
+void ExamAdministrator::removeExam()
+{
+
+}
+
+void ExamAdministrator::updateExam()
+{
+
+}
+
+ExamAdministrator::~ExamAdministrator()
+{
+
+}
+
+
+
+
+
+
+
+//Examination.h
+
+
+#include"Employee.h"
+#include"ExamAdministrator.h"
+#define size 10
+class Examination
+{
+private:
+	int enrolmentKey;
+	char examName[20];
+	char examDate[20];
+	char examTime[20];
+	char examPaper[20];
+	char examCode[20];
+	char examAdminID[20];
+  ExamAdministrator* exAdmin[size];
+
+public:
+	Examination();
+	Examination(int enrolementKey, const char examName[], const char pexamDate[], const char examTime[], const char exampaper[], const char examcode[], const char examAdminID[]);
+	void displayExamDetails();
+	void displayExam();
+	void getAnswers();
+	~Examination();
+	
+};
+
+//Examination cpp
+
+
+#include "Examination.h"
+#include<cstring>
+
+Examination::Examination()
+{
+	enrolmentKey = 0;
+	strcpy_s(examName, "");
+	strcpy_s(examDate, "");
+	strcpy_s(examTime, "");
+	strcpy_s(examPaper, "");
+	strcpy_s(examCode, "");
+	strcpy_s(examAdminID, "");
+
+}
+
+Examination::Examination(int penrolementKey, const char pexamName[], const char pexamDate[], const char pexamTime[], const char pexampaper[], const char pexamcode[], const char pexamAdminID[])
+{
+	enrolmentKey = penrolementKey;
+	strcpy_s(examName, pexamName);
+	strcpy_s(examDate, pexamDate);
+	strcpy_s(examTime, pexamTime);
+	strcpy_s(examPaper, pexampaper);
+	strcpy_s(examCode, pexamcode);
+	strcpy_s(examAdminID, pexamAdminID);
+
+}
+
+void Examination::displayExamDetails()
+{
+
+}
+
+void Examination::displayExam()
+{
+
+}
+
+void Examination::getAnswers()
+{
+
+}
+
+Examination::~Examination()
+{
+
+}
+
