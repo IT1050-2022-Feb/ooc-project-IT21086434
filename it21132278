@@ -1,0 +1,84 @@
+/* admin.h */
+#pragma once
+#include "Staff.h"
+
+class Admin : public Staff {
+
+public:
+
+	Admin(int ID, string role, string name, string email, string nic, string password);
+	void addStaff();
+	void updateStaff();
+	void deleteStaff();
+	~Admin();
+
+};
+-----------------------------------------------------------------------------------------------
+/* admin.cpp */
+#include<iostream>
+#include "Admin.h"
+#include "Staff.h"
+#include "Staff.cpp"
+
+using namespace std;
+
+	Admin::Admin(int ID, string role, string name, string email, string nic, string password) :Staff(ID, role, name, email, nic, password) {
+
+	}
+
+	void Admin::addStaff() {
+
+	}
+
+	void Admin::updateStaff() {
+
+	}
+
+	void Admin::deleteStaff() {
+
+	}
+  -------------------------------------------------------------------------------------------------------------------------------
+  /* staff.h */
+  #pragma once
+
+class Staff {
+
+protected:
+	int stf_ID;
+	string stf_Role;
+	string stf_Name;
+	string stf_Email;
+	string stf_NIC;
+	string stf_PWD;
+
+public:
+	Staff(int ID, string role, string name, string email, string nic, string password);
+	void login();
+	void logout();
+	~Staff();
+
+};
+--------------------------------------------------------------------------------------------------------------------
+/* staff.cpp */
+#include<iostream>
+#include "Staff.h"
+
+using namespace std;
+
+	Staff::Staff(int ID, string role, string name, string email, string nic, string password) {
+
+		stf_ID = ID;
+		stf_Role = role;
+		stf_Name = name;
+		stf_Email = email;
+		stf_NIC = nic;
+		stf_PWD = password;
+	}
+
+	void Staff::login() {
+
+	}
+
+	void Satff::logout() {
+
+	}
