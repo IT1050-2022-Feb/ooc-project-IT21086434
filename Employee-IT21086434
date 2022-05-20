@@ -1,0 +1,109 @@
+//Employee.h
+#pragma once
+#include "Answer_Script.h"
+#include "Feedback.h"
+#include "Inquiry.h"
+#include "Examination.h"
+#include "Result.h"
+#define SIZE 10
+
+class Employee
+{
+private:
+	char emp_ID[5];
+	char emp_Name[20];
+	char emp_Email[20];
+	char emp_NIC[15];
+	char emp_PWD[20];
+	Answer_Script* script[SIZE];
+  Feedback* fdback[SIZE];
+  Inquiry* inq[SIZE];
+  Examination* exam[SIZE];
+  Result* res[SIZE];
+
+public:
+	Employee();
+	Employee(char empID[], char empName[], char empEmail[], char empNIC[], char empPWD[]);
+	void setDetails(char empID[], char empName[], char empEmail[], char empNIC[], char empPWD[]);
+	void login();
+	void registerEmployee();
+	void updateUserDetails();
+	void takeExam();
+	void uploadAnswerScript();
+	void viewResults();
+	void updateUserDetails();
+	void sendInquiry();
+	void sendFeedback();
+	void logout();
+	~Employee();
+};
+
+
+
+//Employee.cpp
+#include "Employee.h"
+#include <cstring>
+
+Employee::Employee()
+{
+	strcpy_s(emp_ID, "");
+	strcpy_s(emp_Name, "");
+	strcpy_s(emp_Email , "");
+	strcpy_s(emp_NIC, "");
+	strcpy_s(emp_PWD, "");
+}
+
+Employee::Employee(char empID[], char empName[], char empEmail[], char empNIC[], char empPWD[])
+{
+	strcpy(emp_ID, empID);
+	strcpy(emp_Name, empName);
+	strcpy(emp_Email, empEmail);
+	strcpy(emp_NIC, empNIC);
+	strcpy(emp_PWD, empPWD);
+}
+
+void Employee::setDetails(char empID[], char empName[], char empEmail[], char empNIC[], char empPWD[])
+{
+}
+
+void Employee::login()
+{
+}
+
+void Employee::registerEmployee()
+{
+}
+
+void Employee::updateUserDetails()
+{
+}
+
+
+void Employee::takeExam()
+{
+}
+
+void Employee::uploadAnswerScript(Answer_Script* ansScript)
+{
+}
+
+void Employee::viewResults()
+{
+}
+
+void Employee::sendInquiry()
+{
+}
+
+void Employee::sendFeedback()
+{
+}
+
+
+void Employee::logout()
+{
+}
+
+Employee::~Employee()
+{
+}
