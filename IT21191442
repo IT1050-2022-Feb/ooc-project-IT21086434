@@ -1,0 +1,189 @@
+//CustomOfficer.h
+
+#define size1 10
+#define size2 10
+#include "Feedback.h"
+#include "Inquiry.h"
+#include "Staff.h"
+class CustomOfficer : public Staff
+{
+private:
+  Feedback* fdback[size1];
+  Inquiry* inq[size2];
+  
+
+public:
+	CustomOfficer();
+	CustomOfficer(const char o_ID[], const char s_Role[], const char s_Name[], const char s_Email[], const char s_NIC[], const char s_pwd[]);
+	void displayCustomOfficerDetails();
+	void viewInquiry();
+	void collectFeedback();
+	void sendSolutions();
+	~CustomOfficer();
+};
+
+
+//CustomOfficer.cpp
+
+#include "CustomOfficer.h"
+#include<cstring>
+using namespace std;
+
+CustomOfficer :: CustomOfficer() 
+{
+	strcpy_s(officer_ID, "");
+	strcpy_s(stf_Role, "");
+	strcpy_s(stf_Name, "");
+	strcpy_s(stf_Email, "");
+	strcpy_s(stf_NIC, "");
+	strcpy_s(PWD, "");
+}
+
+CustomOfficer::CustomOfficer(const char o_ID[], const char s_Role[], const char s_Name[], const char s_Email[], const char s_NIC[], const char s_pwd[])
+{
+	strcpy_s(officer_ID, o_ID);
+	strcpy_s(stf_Role, s_Role);
+	strcpy_s(stf_Name, s_Name);
+	strcpy_s(stf_Email, s_Email);
+	strcpy_s(stf_NIC, s_NIC);
+	strcpy_s(PWD, s_pwd);
+
+}
+
+void CustomOfficer::displayCustomOfficerDetails()
+{
+
+
+}
+
+void CustomOfficer::viewInquiry()
+{
+
+}
+void CustomOfficer::collectFeedback()
+{
+
+}
+void CustomOfficer::sendSolutions()
+{
+
+}
+CustomOfficer::~CustomOfficer()
+{
+
+}
+
+
+
+//-----------------------------------------------------------------------------------
+
+//Inquiry.h
+
+#include "CustomOfficer.h"
+class Inquiry
+{
+private:
+	char inq_ID[6];
+	char emp_ID[6];
+	char inq_Subject[100];
+	char inquiry[300];
+	char officer_ID[6];
+
+public:
+	Inquiry();
+	Inquiry(const char i_ID[],const char e_ID[], const char i_Sublect[], const char i_Inquiry[], const char o_ID[]);
+	void displayInquiryDetails();
+	~Inquiry();
+};
+
+
+//Inquiry.cpp
+
+#include "Inquiry.h"
+#include<cstring>
+using namespace std;
+
+
+Inquiry :: Inquiry()
+{
+	strcpy_s(inq_ID, "");
+	strcpy_s(emp_ID, "");
+	strcpy_s(inq_Subject, "");
+	strcpy_s(inquiry, "");
+	strcpy_s(officer_ID, "");
+}
+
+Inquiry::Inquiry(const char i_ID[], const char e_ID[], const char i_Subject[], const char i_Inquiry[], const char o_ID[])
+{
+	strcpy_s(inq_ID, i_ID);
+	strcpy_s(emp_ID, e_ID);
+	strcpy_s(inq_Subject, i_Subject);
+	strcpy_s(inquiry, i_Inquiry);
+	strcpy_s(officer_ID, o_ID);
+
+}
+
+void Inquiry::displayInquiryDetails()
+{
+
+}
+Inquiry::~Inquiry()
+{
+
+}
+
+
+//----------------------------------------------------------------------
+
+//Feedback.h
+
+#include "CustomOfficer.h"
+class Feedback
+{
+private:
+	char feed_ID[6];
+	char emp_ID[6];
+	char feedback[300];
+	char officer_ID[6];
+
+public:
+	Feedback();
+	Feedback(const char f_ID[], const char e_ID[], const char f_Feedback[], const char o_ID[]);
+	void displayFeedbackDetails();
+	~Feedback();
+};
+
+//Feedback.cpp
+
+#include "Feedback.h"
+#include<cstring>
+using namespace std;
+
+
+Feedback::Feedback()
+{
+	strcpy_s(feed_ID, "");
+	strcpy_s(emp_ID, "");
+	strcpy_s(feedback, "");
+	strcpy_s(officer_ID, "");
+}
+
+Feedback::Feedback(const char f_ID[], const char e_ID[], const char f_Feedback[], const char o_ID[])
+{
+	strcpy_s(feed_ID, f_ID);
+	strcpy_s(emp_ID, e_ID);
+	strcpy_s(feedback, f_Feedback);
+	strcpy_s(officer_ID, o_ID);
+
+}
+
+void Feedback :: displayFeedbackDetails()
+{
+
+}
+Feedback::~Feedback()
+{
+
+}
+
+
