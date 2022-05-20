@@ -40,6 +40,8 @@ public:
 
 
 
+
+
 //Employee.cpp
 #include "Employee.h"
 #include <cstring>
@@ -107,3 +109,67 @@ void Employee::logout()
 Employee::~Employee()
 {
 }
+
+
+
+
+//Answer Script.h
+
+#pragma once
+#include "Employee.h"
+#include "Examiner.h"
+#define SIZE 10
+
+class Answer_Script
+{
+private:
+	int src_Code;
+	char emp_ID[5];
+	int ex_ID;
+	char examin_ID[20];
+	Employee* emp[SIZE];
+
+public:
+	Answer_Script();
+	Answer_Script(int code, char empID[], int exID, char examinID[]);
+	void displayAnswerScript();
+	~Answer_Script();
+};
+
+
+
+
+//Answer Script.cpp
+
+#include "Answer_Script.h"
+#include <cstring>
+
+Answer_Script::Answer_Script()
+{
+	src_Code = 0;
+	strcpy(emp_ID, "");
+	ex_ID = 0;
+	strcpy(examin_ID, "");
+}
+
+Answer_Script::Answer_Script(int code, char empID[], int exID, char examinID[])
+{
+	src_Code = code;
+	strcpy(emp_ID, empID);
+	ex_ID = exID;
+	strcpy(examin_ID, examinID);
+}
+
+void Answer_Script::displayAnswerScript()
+{
+}
+
+Answer_Script::~Answer_Script()
+{
+}
+
+
+
+
+
+
