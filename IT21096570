@@ -1,0 +1,135 @@
+//Examiner.h
+
+#include "Staff.h"
+#include "Result.h"
+#include "AnswerScript.h"
+#difine SIZE1 5
+#difine SIZE2 5
+
+
+class Examiner: public Staff
+{
+	private:
+	
+		Result* result[SIZE1];
+		AnswerScript* answer[SIZE2];
+		
+		
+	public:
+		Examiner();
+		Examiner(int examinerID, const char role[], const char examinerName[], const char examinerEmail[], const char examinerNic[], const char e_password[]);
+
+		void findAvailableMaterial();
+		void MarkQuestions();
+		void putMarks();
+		void calculateTotalMark();
+		void sendResult();
+		~Examiner();	
+}
+-----------------------------------------------------------------------------------------------------------------------------
+
+//Examiner.cpp
+
+#include <iostream>
+#include <cstring>
+#include "Examiner.h"
+
+Examiner::Examiner(){
+	
+	stf_ID = 0;
+	strcpy_s(stf_Role, "");
+	strcpy_s(stf_Name, "");
+	strcpy_s(stf_Email, "");
+	strcpy_s(stf_Nic, "");
+	strcpy_s(stf_PWD, "");
+	
+}
+
+Examiner::Examiner(int examinerID, const char role[], const char examinerName[], const char examinerEmail[], const char examinerNic[], const char e_password[]){
+	
+	stf_ID = examinerID;
+	strcpy_s(stf_Role, role);
+	strcpy_s(stf_Name, examinerName);
+	strcpy_s(stf_Email, examinerEmail);
+	strcpy_s(stf_Nic, examinerNic);
+	strcpy_s(stf_PWD, e_password);
+}
+
+void Examiner::findAvailableMaterial(){
+	
+}
+
+void Examiner::MarkQuestions(){
+	
+}
+
+void Examiner::putMarks(){
+	
+}
+
+void Examiner::sendResult(){
+	
+}
+Examiner::~Examiner(){ //Destructor
+	
+}
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+//Result.h
+
+class Result
+{
+	private:
+		int resultID;
+		char result[20];
+		
+	public:
+		Result();
+		Result(int r_resultID, const char r_result[]);
+
+		void displayResult();
+		void displayCandidateDetail();
+		void displayExaminerDetails();
+		~Result();			
+}
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+//Result.cpp
+
+#include <iostream>
+#include <cstring>
+#include "Result.h"
+
+Result::Result(){
+	
+	resultID = 0;
+	strcpy_s(result, "");
+	
+}
+
+Result::Result(int r_resultID, const char r_result){
+	
+	resultID = r_resultID;
+	strcpy_s(result, r_result);
+}
+
+void Result::displayResult(){
+	return result;
+
+}
+
+void Result::displayExaminerDetails(){	
+}
+
+void Result::displayCandidateDetail(){
+	
+}
+Result::~Result(){ //Destructor
+
+}
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+
